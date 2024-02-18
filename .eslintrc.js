@@ -23,7 +23,7 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js', 'jest.config.ts'],
   rules: {
     'dot-notation': 2,
-    'no-console': [1, { allow: ['info', 'warn', 'error'] }],
+    'no-console': [2, { allow: ['info', 'warn', 'error'] }],
     'no-var': 2,
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': [1, { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],

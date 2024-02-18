@@ -1,11 +1,7 @@
 import { type RequestHandler } from 'express';
-import { type PostType } from '../types';
 import { type ResponseJson } from '@/types';
 import { type Type } from '../enums';
-
-interface Params {
-  serviceId: string;
-}
+import Post, { type PostType } from '../model';
 
 interface Body {
   title: string;
@@ -17,14 +13,12 @@ interface Query {
   debug: string;
 }
 
-// controller is expected to have :serviceId url params, body with Body format, url query with Query format
+// controller is expected to have body with Body format, url query with Query format
 // ane return json with PostType format
-const create: RequestHandler<Params, ResponseJson<PostType>, Body, Query> = (req, res) => {
+const create: RequestHandler<object, ResponseJson<PostType>, Body, Query> = async (req, res) => {
   const { body } = req;
-  const newPost = {
-    id: 2,
-    ...body,
-  };
+  const newPost = new Post(body);
+  await newPost.save();
   res.status(200).json({
     data: newPost,
     message: 'Post created',

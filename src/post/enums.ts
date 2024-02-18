@@ -1,4 +1,4 @@
-export const enum Type {
+export enum Type {
   Feed = 'feed',
   Ad = 'ad',
 }

@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 0,
     '@typescript-eslint/no-misused-promises': 0,
     '@typescript-eslint/array-type': 0,
+    '@typescript-eslint/strict-boolean-expressions': 0,
     'prefer-destructuring': [1, { object: true, array: false }],
     'prefer-const': 2,
     'import/newline-after-import': 2,
